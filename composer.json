@@ -1,0 +1,12 @@
+{
+    "name": "antoniogweb/php2xai-exercises",
+    "description": "Experimental exercises and playground for PHP2xAI.",
+    "type": "project",
+    "license": "GPL-3.0-only",
+    "require": {
+        "php": ">=8.1",
+        "antoniogweb/php2xai": "^0.2"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
