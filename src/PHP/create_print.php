@@ -18,16 +18,3 @@ $a->printData();
 $b = Tensor::createFromData([[1,2],[2,3]], "b");
 
 $b->print();
-
-$c = $a->matmul($b);
-
-$graphRuntime = GraphRuntime::createFromOutputTensor($c);
-$graphRuntime->forward();
-$graphRuntime->backward();
-$graphRuntime->refreshTensorsData(); // reload tensors data and grad after forward and backward
-
-$c->printData();
-$b->printGrad();
-$a->printGrad();
-
-// print_r($context);
