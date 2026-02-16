@@ -5,15 +5,25 @@ use PHP2xAI\Runtime\PHP\Core\GraphRuntime;
 
 include("../../vendor/autoload.php");
 
-$a = Tensor::createFromData([[1,2],[2,3]],"a");
+$a = Tensor::createFromData([
+	[[1,2,3],[2,3,3]],
+	[[3,4,1],[5,6,1]],
+	[[3,4,2],[5,6,2]]
+],"a");
 
 $a->printData();
 
-$b = Tensor::createFromData([[1,2],[2,3]], "b");
+$b = Tensor::createFromData([
+	[[1,2],[2,3],[3,4]],
+	[[3,4],[5,6],[3,4]],
+	[[3,4],[5,6],[2,1]]
+], "b");
 
 $b->print();
 
 $c = $a->matmul($b);
+
+// print_r($c->shape);
 
 $graphRuntime = GraphRuntime::createFromOutputTensor($c);
 $graphRuntime->forward();
