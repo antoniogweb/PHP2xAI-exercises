@@ -19,7 +19,7 @@ $b = Tensor::createFromData([
 	[[3,4],[5,6],[2,1]]
 ], "b");
 
-$b->print();
+$b->printData();
 
 $c = $a->matmul($b);
 
