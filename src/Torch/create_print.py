@@ -1,4 +1,5 @@
 # source ~/venvs/torch/bin/activate
+# deactivate
 
 import torch
 
