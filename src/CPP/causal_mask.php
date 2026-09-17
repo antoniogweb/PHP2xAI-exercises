@@ -24,8 +24,6 @@ function assertValues(string $label, array $actual, array $expected): void
 	}
 }
 
-$Lq = 3;
-$Lkv = 5;
 $input = Tensor::createFromData([
 	[
 		[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]],
@@ -33,7 +31,7 @@ $input = Tensor::createFromData([
 	],
 ], "scores");
 $input->setRequiresGrad(true);
-$output = $input->applyCausalMask($Lq, $Lkv);
+$output = $input->applyCausalMask();
 
 $runtime = GraphRuntimeCpp::createFromOutputTensor($output);
 $inputId = $input->context->getTensorId($input);
